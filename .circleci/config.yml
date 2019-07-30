@@ -9,10 +9,10 @@ jobs:
       - checkout # Checks out the source code
       - run: echo "Hello World!"
       - run: go get -d ./...
-            - run:
-                name: Build the executable
-                command: |
-                  echo "Other important command here as example"
-                  go build
-            - store_artifacts:
-                path: ./circleci-hello # executable
+      - run:
+          name: Build the executable
+          command: |
+            echo "Other important command here as example"
+            go build
+      - store_artifacts:
+          path: ./circleci-hello # executable
