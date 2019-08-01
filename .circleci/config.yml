@@ -29,3 +29,12 @@ test:
       - checkout # Checks out the source code
       - run: go get -d ./...
       - run: go test
+
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
